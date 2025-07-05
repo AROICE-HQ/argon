@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARGON</title>
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/popup.css">
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+</head>
+<body>
+    <div class="container">
+        <!-- Header with logo and settings -->
+        <header>
+            <div class="logo">
+                <img src="icons/icon-48.png" alt="ARGON Logo">
+                <div class="title">
+                    <h1>ARGON</h1>
+                    <p>Your shield against chaos</p>
+                </div>
+            </div>
+            <button id="settings-btn" class="icon-btn" title="Settings">
+                <i class="fas fa-cog"></i>
+            </button>
+        </header>
+
+        <!-- Temporary Allow Timer (hidden by default) -->
+        <div class="timer-card" id="temporary-allow-container" style="display: none;">
+            <div class="timer-header">
+                <h2>TEMPORARY ACCESS</h2>
+                <div class="timer-site" id="timer-site">example.com</div>
+            </div>
+            <div class="timer-display">
+                <div class="timer-circle">
+                    <svg width="60" height="60" viewBox="0 0 60 60">
+                        <circle class="timer-bg" cx="30" cy="30" r="25" />
+                        <circle class="timer-progress" id="timer-progress" cx="30" cy="30" r="25" stroke-dasharray="157" stroke-dashoffset="0" />
+                    </svg>
+                    <div class="timer-time" id="timer-countdown">5:00</div>
+                </div>
+                <div class="timer-label">until blocking resumes</div>
+            </div>
+        </div>
+
+        <!-- Today's screen time -->
+        <div class="time-card">
+            <h2>TODAY'S SCREEN TIME</h2>
+            <div class="time" id="screen-time">0 sec</div>
+        </div>
+
+        <!-- Action buttons -->
+        <div class="action-buttons">
+            <button id="block-site-btn" class="primary-btn">
+                <i class="fas fa-ban"></i> Block Site
+            </button>
+            <button id="analytics-btn" class="secondary-btn">
+                <i class="fas fa-chart-line"></i> Analytics
+            </button>
+        </div>
+
+        <!-- Quick stats -->
+        <div class="quick-stats">
+            <div class="stat">
+                <h3>Blocks Today</h3>
+                <p id="blocks-today">0</p>
+            </div>
+            <div class="stat">
+                <h3>Sites Blocked</h3>
+                <p id="sites-blocked">0</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+/* CSS Variables and Base Styles */
+:root {
+    /* Color palette based on the reference design */
+    --primary-color: #1a2436;
+    --secondary-color: #2c3445;
+    --accent-color: #ff6757;
+    --text-primary: #ffffff;
+    --text-secondary: #a7b0c0;
+    --text-disabled: #6b7280;
+    --border-color: #3a4255;
+    --success-color: #00c896;
+    --warning-color: #ffcc5c;
+    --error-color: #ef4444;
+    --background-light: #242c3d;
+    --background-lighter: #2f384a;
+    --sidebar-width: 240px;
+}
+
+/* Global Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+body {
+    background-color: var(--primary-color);
+    color: var(--text-primary);
+    min-height: 100vh;
+}

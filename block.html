@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Access Blocked - ARGON</title>
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/block.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="block-card">
+            <div class="logo">
+                <img src="icons/icon-128.png" alt="ARGON Logo">
+                <h1>ARGON</h1>
+            </div>
+            
+            <div class="block-message">
+                <div class="shield-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h2>This site has been blocked</h2>
+                <p id="site-url">You've chosen to block this site to maintain your focus.</p>
+                
+                <div class="block-stats">
+                    <div class="stat-item">
+                        <span id="block-count">0</span>
+                        <small>Blocks Today</small>
+                    </div>
+                    <div class="stat-item">
+                        <span id="time-saved">0 min</span>
+                        <small>Time Saved Today</small>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="actions">
+                <button id="go-back-btn" class="secondary-btn">
+                    <i class="fas fa-arrow-left"></i> Go Back
+                </button>
+                <button id="allow-once-btn" class="primary-btn">
+                    <i class="fas fa-check"></i> Allow Once (5 mins)
+                </button>
+            </div>
+            
+            <div class="motivation">
+                <p>"Focus on being productive, not busy."</p>
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/block.js"></script>
+</body>
+</html>

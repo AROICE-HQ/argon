@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARGON Dashboard</title>
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <link rel="stylesheet" href="feat/doom/doom.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <img src="icons/icon-48.png" alt="ARGON Logo">
+                <h1>ARGON</h1>
+            </div>
+
+            <nav class="sidebar-nav">
+                <ul>
+                    <li data-page="analytics">
+                        <a href="#analytics" class="active">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Analytics</span>
+                        </a>
+                    </li>
+
+                    <li data-page="blocked-sites">
+                        <a href="#blocked-sites">
+                            <i class="fas fa-ban"></i>
+                            <span>Blocked Sites</span>
+                        </a>
+                    </li>
+                    <li data-page="pomodoro">
+                        <a href="#pomodoro">
+                            <i class="fas fa-clock"></i>
+                            <span>Pomodoro Timer</span>
+                        </a>
+                    </li>
+                    <li data-page="health-reminders">
+                        <a href="#health-reminders">
+                            <i class="fas fa-heartbeat"></i>
+                            <span>Digital Wellbeing</span>
+                        </a>
+                    </li>
+                    
+                    <li data-page="doom-blocker">
+                        <a href="#doom-blocker">
+                            <i class="fas fa-skull"></i>
+                            <span>Doom Scroll Blocker</span>
+                        </a>
+                    </li>
+                    
+                    <li data-page="ashes-promotion">
+                        <a href="#ashes-promotion">
+                            <i class="fas fa-fire"></i>
+                            <span>Ashes - New Tab</span>
+                        </a>
+                    </li>
+                    <li data-page="must-have-extensions">
+                        <a href="#must-have-extensions">
+                            <i class="fas fa-puzzle-piece"></i>
+                            <span>Must Have Extensions</span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="help-dropdown">
+                    <button id="help-menu-trigger" class="help-button">
+                        <i class="fas fa-question-circle"></i>
+                        <!-- <span></span>
+                        <i class="fas fa-chevron-right dropdown-arrow"></i> -->
+                    </button>
+                    
+                    <div class="help-dropdown-menu" id="help-dropdown-menu">
+                        <div class="dropdown-section">
+
+                            <button class="dropdown-item" id="whats-new-btn">
+                                <i class="fas fa-rocket"></i>
+                                <span>What's New</span>
+                            </button>
+
+                            <a href="mailto:admin@aroice.in" class="dropdown-item">
+                                <i class="fas fa-envelope"></i>
+                                <span>Get Support</span>
+                            </a>
+                            <a href="https://argon.aroice.in" target="_blank" class="dropdown-item">
+                                <i class="fas fa-globe"></i>
+                                <span>Argon Website</span>
+                            </a>
+                            
+                            <button class="dropdown-item" id="about-developer-btn">
+                                <i class="fas fa-user-tie"></i>
+                                <span>About Developer</span>
+                            </button>
+
+                            <button class="dropdown-item" id="about-designer-btn">
+                                    <i class="fas fa-paint-roller"></i>
+                                    <span>About UI Designer</span>
+                                </button>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <h2 id="page-title">Analytics</h2>
+                <div class="header-actions">
+                    
+                </div>
+            </header>
+
+            <!-- Content sections -->
+            <section id="analytics" class="page-content active">
+                
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-header">
+                            <h3>Today</h3>
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="stat-value" id="screen-time-today">0 sec</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-header">
+                            <h3>This Week</h3>
+                            <i class="fas fa-calendar-week"></i>
+                        </div>
+                        <div class="stat-value" id="screen-time-week">0 sec</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-header">
+                            <h3>Distracting Time</h3>
+                            <i class="fas fa-exclamation-circle"></i>
+                        </div>
+                        <div class="stat-value" id="distracting-time">0 sec</div>
+                    </div>
+                </div>
+
+                <!-- Screen Time Chart -->
+                <div class="chart-container">
+                    <div class="chart-header">
+                        <h3>Screen Time Overview</h3>
+                        <div class="chart-toggle">
+                            <button class="toggle-btn active" data-period="daily">
+                                <i class="fas fa-clock"></i>
+                                Daily (Hours)
+                            </button>
+                            <button class="toggle-btn" data-period="weekly">
+                                <i class="fas fa-calendar-week"></i>
+                                Weekly (Days)
+                            </button>
+                        </div>
+                    </div>
+                    <div class="chart-content">
+                        <canvas id="screenTimeChart" width="800" height="300"></canvas>
+                        <div class="chart-info">
+                            <div class="chart-legend">
+                                <div class="legend-item">
+                                    <span class="legend-color"></span>
+                                    <span class="legend-label">Screen Time</span>
+                                </div>
+                            </div>
+                            <div class="chart-stats">
+                                <span class="chart-stat" id="chart-total">Total: 0h 0m</span>
+                                <span class="chart-stat" id="chart-average">Avg: 0h 0m</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sites-container">
+                    <h3>Top Sites Today</h3>
+                    <div class="sites-list" id="top-sites">
+                        <!-- Will be populated with JavaScript -->
+                        <div class="site-item">
+                            <div class="site-info">
+                                <img src="https://www.google.com/favicon.ico" alt="Google">
+                                <span>Google</span>
+                            </div>
+                            <div class="site-time">0 sec</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="blocked-sites" class="page-content">
+                <div class="content-header">
+                    <h2>Manage Blocked Sites</h2>
+                    <button id="add-site-btn" class="primary-btn">
+                        <i class="fas fa-plus"></i> Add Site
+                    </button>
+                </div>
+
+                <div class="blocked-sites-container">
+                    <!-- Search and filter -->
+                    <div class="search-container">
+                        <div class="search-input">
+                            <i class="fas fa-search"></i>
+                            <input type="text" placeholder="Search blocked sites..." id="search-blocked-sites">
+                        </div>
+                    </div>
+
+                    <!-- Blocked sites list -->
+                    <div class="blocked-sites-list" id="blocked-sites-list">
+                        <!-- Will be populated with JavaScript -->
+                    </div>
+                </div>
+            </section>
+
+            <section id="pomodoro" class="page-content">
+                <div class="content-header">
+                    <!-- <h2>Pomodoro Timer</h2> -->
+                    <div class="timer-status">
+                        <span id="session-count">Session 1 of 4</span>
+                    </div>
+                </div>
+
+                <div class="pomodoro-container">
+                    <div class="timer-card">
+                        <div class="timer-circle">
+                            <div class="timer-progress">
+                                <svg class="progress-ring" width="250" height="250">
+                                    <circle
+                                        class="progress-ring-circle"
+                                        stroke="#3a4255"
+                                        stroke-width="8"
+                                        fill="transparent"
+                                        r="110"
+                                        cx="125"
+                                        cy="125"/>
+                                    <circle
+                                        class="progress-ring-circle progress"
+                                        stroke="#ff6757"
+                                        stroke-width="8"
+                                        fill="transparent"
+                                        r="110"
+                                        cx="125"
+                                        cy="125"/>
+                                </svg>
+                                <div class="timer-display">
+                                    <div class="timer-time" id="timer-display">25:00</div>
+                                    <div class="timer-mode" id="timer-mode">Work Session</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="timer-controls">
+                            <button id="start-pause-btn" class="timer-btn primary">
+                                <i class="fas fa-play"></i>
+                                <span>Start</span>
+                            </button>
+                            <button id="reset-btn" class="timer-btn secondary">
+                                <i class="fas fa-redo"></i>
+                                <span>Reset</span>
+                            </button>
+                            <button id="skip-btn" class="timer-btn secondary">
+                                <i class="fas fa-step-forward"></i>
+                                <span>Skip</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="pomodoro-settings">
+                        <h3>Timer Settings</h3>
+                        <div class="settings-grid">
+                            <div class="setting-group">
+                                <label for="work-duration">Work Duration</label>
+                                <div class="duration-input">
+                                    <input type="number" id="work-duration" value="25" min="1" max="60">
+                                    <span>minutes</span>
+                                </div>
+                            </div>
+                            <div class="setting-group">
+                                <label for="short-break-duration">Short Break</label>
+                                <div class="duration-input">
+                                    <input type="number" id="short-break-duration" value="5" min="1" max="30">
+                                    <span>minutes</span>
+                                </div>
+                            </div>
+                            <div class="setting-group">
+                                <label for="long-break-duration">Long Break</label>
+                                <div class="duration-input">
+                                    <input type="number" id="long-break-duration" value="15" min="1" max="60">
+                                    <span>minutes</span>
+                                </div>
+                            </div>
+                            <div class="setting-group">
+                                <label for="sessions-until-long-break">Sessions Until Long Break</label>
+                                <div class="duration-input">
+                                    <input type="number" id="sessions-until-long-break" value="4" min="2" max="8">
+                                    <span>sessions</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="pomodoro-options">
+                            <div class="option-item">
+                                <label class="toggle">
+                                    <input type="checkbox" id="auto-start-breaks">
+                                    <span class="toggle-slider"></span>
+                                </label>
+                                <span>Auto-start breaks</span>
+                            </div>
+                            <div class="option-item">
+                                <label class="toggle">
+                                    <input type="checkbox" id="auto-start-work">
+                                    <span class="toggle-slider"></span>
+                                </label>
+                                <span>Auto-start work sessions</span>
+                            </div>
+                            <div class="option-item">
+                                <label class="toggle">
+                                    <input type="checkbox" id="notifications-enabled" checked>
+                                    <span class="toggle-slider"></span>
+                                </label>
+                                <span>Enable notifications</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pomodoro-stats">
+                        <h3>Today's Progress</h3>
+                        <div class="stats-row">
+                            <div class="stat-item">
+                                <div class="stat-number" id="completed-sessions">0</div>
+                                <div class="stat-label">Completed Sessions</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number" id="total-focus-time">0h 0m</div>
+                                <div class="stat-label">Total Focus Time</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number" id="productivity-score">0%</div>
+                                <div class="stat-label">Productivity Score</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="doom-blocker" class="page-content">
+                
+            
+
+                <div class="doom-blocker-container">
+                    <!-- Info Card -->
+                    <!-- <div class="doom-info-card">
+                        <div class="doom-icon">
+                            <i class="fas fa-skull"></i>
+                        </div>
+                        <div class="doom-content">
+                            <h3>Stop Endless Scrolling</h3>
+                            <p>Add websites that trigger your doomscrolling habits. When you scroll too much on these sites, we'll intervene with a gentle reminder to "touch some grass!"</p>
+                        </div>
+                    </div> -->
+
+                    <!-- Add Site Section -->
+                    <div class="doom-add-section">
+                        <h3>Add Doom Scroll Site</h3>
+                        <div class="doom-input-group">
+                            <input type="text" id="doom-site-input" placeholder="Enter website URL (e.g., twitter.com, instagram.com)" class="doom-input">
+                            <button id="doom-add-btn" class="doom-btn primary">
+                                <i class="fas fa-plus"></i>
+                                Add Site
+                            </button>
+                        </div>
+                        <small class="doom-hint">Enter domain name without http:// or www</small>
+                    </div>
+
+                    <!-- Blocked Sites List -->
+                    <div class="doom-sites-section">
+                        <h3>Protected Sites</h3>
+                        <div class="doom-sites-list" id="doom-sites-list">
+                            <!-- Sites will be populated here -->
+                        </div>
+                        <div class="doom-empty-state" id="doom-empty-state" style="display: none;">
+                            <i class="fas fa-leaf"></i>
+                            <p>No doom scroll sites added yet. Add some distracting websites to get started!</p>
+                        </div>
+                    </div>
+
+                    <!-- Statistics -->
+                    <div class="doom-stats-section">
+                        <h3>Doom Scroll Prevention Stats</h3>
+                        <div class="doom-stats-grid">
+                            <div class="doom-stat-card">
+                                <div class="doom-stat-icon">
+                                    <i class="fas fa-shield-alt"></i>
+                                </div>
+                                <div class="doom-stat-content">
+                                    <div class="doom-stat-number" id="doom-interventions-today">0</div>
+                                    <div class="doom-stat-label">Interventions Today</div>
+                                </div>
+                            </div>
+                            <div class="doom-stat-card">
+                                <div class="doom-stat-icon">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div class="doom-stat-content">
+                                    <div class="doom-stat-number" id="doom-time-saved">0m</div>
+                                    <div class="doom-stat-label">Time Saved</div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="ashes-promotion" class="page-content">
+                <div class="content-header">
+                    
+                    <p class="section-description">Transform your browser's new tab into a productivity powerhouse with Ashes - the ultimate new tab experience.</p>
+                </div>
+
+                <div class="ashes-hero">
+                    <div class="ashes-showcase">
+                        <div class="ashes-preview">
+                            <img src="https://ashes.aroice.in/assets/social-media/og-banner.png" alt="Ashes New Tab Preview" class="ashes-screenshot">
+                        </div>
+                        <div class="ashes-content">
+                            <h3>Why Ashes?</h3>
+                            <div class="ashes-features">
+                                <div class="feature-item">
+                                    <i class="fas fa-spa"></i>
+                                    <div class="feature-text">
+                                        <h4>Replace Noise With Presence</h4>
+                                        <p>Every new tab is a silent reminder that life is finite.</p>
+                                    </div>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-cube"></i>
+                                    <div class="feature-text">
+                                        <h4>Minimalist Design, No Clutter</h4>
+                                        <p>Just a clean interface & a live life-remaining countdown.</p>
+                                    </div>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-compass"></i>
+                                    <div class="feature-text">
+                                        <h4>Not Just About Productivity</h4>
+                                        <p>Minimal by intention — clear, calm, and undistracted.</p>
+                                    </div>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-shield"></i>
+                                    <div class="feature-text">
+                                        <h4>Privacy First</h4>
+                                        <p>No tracking, no ads, just pure functionality</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="ashes-actions">
+                        <div class="action-buttons">
+                            <a href="https://chromewebstore.google.com/detail/ashes-new-tab/ldjabgmogbniabagofffdgkohdeemiim" target="_blank" class="ashes-btn primary">
+                                <i class="fab fa-chrome"></i>
+                                Install Ashes
+                            </a>
+                            <a href="https://ashes.aroice.in" target="_blank" class="ashes-btn secondary">
+                                <i class="fas fa-globe"></i>
+                                Learn More
+                            </a>
+                            <a href="https://ashes.aroice.in/faq/index.html" target="_blank" class="ashes-btn tertiary">
+                                <i class="fas fa-question-circle"></i>
+                                FAQ
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="must-have-extensions" class="page-content">
+                <div class="content-header">
+                    <p class="section-description">Essential Chrome extensions that every user should have for a better, safer browsing experience.</p>
+                </div>
+
+                <div class="extensions-container">
+                    <div class="extension-card">
+                        <div class="extension-icon">
+                            <img src="https://lh3.googleusercontent.com/lsanoOfx5N_t-7gh5Qg9FGIirVEjdCqalZXyLZYRd5d7Fydm83FQhu4Oq0JmlRyMtyF_LfwuQQZyKRTHs6emnFirsA=s60" alt="uBlock Origin Lite" class="extension-logo">
+                        </div>
+                        <div class="extension-content">
+                            <h3>uBlock Origin Lite</h3>
+                            <p>The most efficient ad blocker and privacy protector. Blocks ads, trackers, and malicious websites to keep your browsing fast and secure.</p>
+                            <div class="extension-benefits">
+                                <span class="benefit-tag">🚫 Blocks Ads</span>
+                                <span class="benefit-tag">🔒 Privacy Protection</span>
+                                <span class="benefit-tag">⚡ Faster Browsing</span>
+                            </div>
+                        </div>
+                        <div class="extension-actions">
+                            <a href="https://chromewebstore.google.com/detail/ublock-origin-lite/ddkjiahejlhfcafbddmgiahcphecmpfh" target="_blank" class="install-btn">
+                                <i class="fas fa-download"></i>
+                                Install
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="extension-card">
+                        <div class="extension-icon">
+                            <img src="https://lh3.googleusercontent.com/LzhiFbFNvTwkOM7XX4K3wkwSlTkMj6NLyixs1yLPaYGIzXaiFGsfi6qcwzKzQcLR-6jtIVnFPRlQWUZC-OlnHpROcg=s60" alt="Privacy Badger" class="extension-logo">
+                        </div>
+                        <div class="extension-content">
+                            <h3>Privacy Badger</h3>
+                            <p>Automatically blocks invisible trackers and spying ads. Protects your privacy by learning to block trackers as you browse.</p>
+                            <div class="extension-benefits">
+                                <span class="benefit-tag">🕵️ Blocks Trackers</span>
+                                <span class="benefit-tag">🛡️ Privacy First</span>
+                                <span class="benefit-tag">🤖 Smart Learning</span>
+                            </div>
+                        </div>
+                        <div class="extension-actions">
+                            <a href="https://chromewebstore.google.com/detail/privacy-badger/pkehgijcmpdhfbdbbnkijodmdjhbjlgp" target="_blank" class="install-btn">
+                                <i class="fas fa-download"></i>
+                                Install
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="extension-card">
+                        <div class="extension-icon">
+                            <img src="https://lh3.googleusercontent.com/S9_5LRhxmhzkW2pLuFqvnXzrRSfyAr4msuEMDVbF2PPa4wYdZeeDIGM2u4oSBCvwMxh5-mBUWLq8H7FTeLouHYTD8Gc=s60" alt="I Still Don't Care About Cookies" class="extension-logo">
+                        </div>
+                        <div class="extension-content">
+                            <h3>I Still Don't Care About Cookies</h3>
+                            <p>Automatically handles cookie consent banners and privacy notices. Saves time by dismissing annoying cookie popups.</p>
+                            <div class="extension-benefits">
+                                <span class="benefit-tag">🍪 Auto-Dismiss</span>
+                                <span class="benefit-tag">⏰ Time Saver</span>
+                                <span class="benefit-tag">🧹 Clean Browsing</span>
+                            </div>
+                        </div>
+                        <div class="extension-actions">
+                            <a href="https://chromewebstore.google.com/detail/i-still-dont-care-about-c/edibdbjcniadpccecjdfdjjppcpchdlm" target="_blank" class="install-btn">
+                                <i class="fas fa-download"></i>
+                                Install
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="extension-card">
+                        <div class="extension-icon">
+                            <img src="https://lh3.googleusercontent.com/oSoXDpjLX_iytl11_ROa1thmFI0xPk9pL8ttEtnFkBI8Cie0Ge8KxVFaokgBRscvUR1cXH4bVeG_C_Fl6kBw3A3_=s60" alt="SponsorBlock for YouTube" class="extension-logo">
+                        </div>
+                        <div class="extension-content">
+                            <h3>SponsorBlock for YouTube</h3>
+                            <p>Skip sponsored segments, intros, outros, and other annoying parts of YouTube videos. Crowdsourced database of video segments.</p>
+                            <div class="extension-benefits">
+                                <span class="benefit-tag">⏭️ Skip Sponsors</span>
+                                <span class="benefit-tag">🎯 Save Time</span>
+                                <span class="benefit-tag">👥 Community-Driven</span>
+                            </div>
+                        </div>
+                        <div class="extension-actions">
+                            <a href="https://chromewebstore.google.com/detail/sponsorblock-for-youtube/mnjggcdmjocbbbhaepdhchncahnbgone" target="_blank" class="install-btn">
+                                <i class="fas fa-download"></i>
+                                Install
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="extension-card">
+                        <div class="extension-icon">
+                            <img src="https://lh3.googleusercontent.com/caSlfk_SsQcmgT_QQjCeMLTgo--swN34fjYgnKdZWJ5Y9Jm4tqkyZintaVLxaAYs8WzPiiXK-0Pkq6M1NNIi7ybOBw=s60" alt="News Feed Eradicator" class="extension-logo">
+                        </div>
+                        <div class="extension-content">
+                            <h3>News Feed Eradicator</h3>
+                            <p>Remove distracting news feeds from popular social media sites like Facebook, Twitter, and LinkedIn. Helps you focus on what matters most.</p>
+                            <div class="extension-benefits">
+                                <span class="benefit-tag">🎯 Remove Distractions</span>
+                                <span class="benefit-tag">📱 Better Focus</span>
+                                <span class="benefit-tag">⏰ Time Management</span>
+                            </div>
+                        </div>
+                        <div class="extension-actions">
+                            <a href="https://chromewebstore.google.com/detail/news-feed-eradicator/fjcldmjmjhkklehbacihaiopjklihlgg" target="_blank" class="install-btn">
+                                <i class="fas fa-download"></i>
+                                Install
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="extensions-footer">
+                    <div class="footer-note">
+                        <i class="fas fa-heart"></i>
+                        <p><strong></strong> We continuously research and add the best Chrome extensions to help improve your browsing experience. Check back regularly for new recommendations!</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="health-reminders" class="page-content">
+                
+
+                <div class="reminders-container">
+                    <!-- Quick Toggle Section -->
+                    <div class="reminders-toggle-section">
+                        <div class="global-toggle">
+                            <h3>Health Reminders</h3>
+                            <label class="toggle">
+                                <input type="checkbox" id="reminders-master-toggle">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                        <p class="toggle-description">Enable or disable all health reminders at once</p>
+                    </div>
+
+                    <!-- Reminder Cards -->
+                    <div class="reminder-cards-grid">
+                        <!-- Posture Reminder -->
+                        <div class="reminder-card">
+                            <div class="reminder-header">
+                                <div class="reminder-icon posture">
+                                    <i class="fas fa-user-circle"></i>
+                                </div>
+                                <div class="reminder-info">
+                                    <h4>Posture Check</h4>
+                                    <p>Sit up straight and align your spine</p>
+                                </div>
+                                <label class="toggle">
+                                    <input type="checkbox" id="posture-reminder-toggle" class="reminder-toggle" data-type="posture">
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                            <div class="reminder-settings">
+                                <div class="interval-setting">
+                                    <label>Remind every:</label>
+                                    <div class="interval-input">
+                                        <input type="number" id="posture-interval" value="30" min="1" max="120">
+                                        <select id="posture-unit">
+                                            <option value="minutes">minutes</option>
+                                            <option value="hours">hours</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="next-reminder">
+                                    <span class="next-reminder-text" id="posture-next">Next reminder: --</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Hydration Reminder -->
+                        <div class="reminder-card">
+                            <div class="reminder-header">
+                                <div class="reminder-icon hydration">
+                                    <i class="fas fa-tint"></i>
+                                </div>
+                                <div class="reminder-info">
+                                    <h4>Drink Water</h4>
+                                    <p>Stay hydrated throughout the day</p>
+                                </div>
+                                <label class="toggle">
+                                    <input type="checkbox" id="hydration-reminder-toggle" class="reminder-toggle" data-type="hydration">
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                            <div class="reminder-settings">
+                                <div class="interval-setting">
+                                    <label>Remind every:</label>
+                                    <div class="interval-input">
+                                        <input type="number" id="hydration-interval" value="45" min="1" max="180">
+                                        <select id="hydration-unit">
+                                            <option value="minutes">minutes</option>
+                                            <option value="hours">hours</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="next-reminder">
+                                    <span class="next-reminder-text" id="hydration-next">Next reminder: --</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Eye Break Reminder -->
+                        <div class="reminder-card">
+                            <div class="reminder-header">
+                                <div class="reminder-icon eye-break">
+                                    <i class="fas fa-eye"></i>
+                                </div>
+                                <div class="reminder-info">
+                                    <h4>Eye Break (20-20-20)</h4>
+                                    <p>Look at something 20 feet away for 20 seconds</p>
+                                </div>
+                                <label class="toggle">
+                                    <input type="checkbox" id="eye-reminder-toggle" class="reminder-toggle" data-type="eye">
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                            <div class="reminder-settings">
+                                <div class="interval-setting">
+                                    <label>Remind every:</label>
+                                    <div class="interval-input">
+                                        <input type="number" id="eye-interval" value="20" min="1" max="60">
+                                        <select id="eye-unit">
+                                            <option value="minutes">minutes</option>
+                                            <option value="hours">hours</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="next-reminder">
+                                    <span class="next-reminder-text" id="eye-next">Next reminder: --</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Movement Reminder -->
+                        <div class="reminder-card">
+                            <div class="reminder-header">
+                                <div class="reminder-icon movement">
+                                    <i class="fas fa-walking"></i>
+                                </div>
+                                <div class="reminder-info">
+                                    <h4>Take a Walk</h4>
+                                    <p>Get up and move around for better circulation</p>
+                                </div>
+                                <label class="toggle">
+                                    <input type="checkbox" id="movement-reminder-toggle" class="reminder-toggle" data-type="movement">
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                            <div class="reminder-settings">
+                                <div class="interval-setting">
+                                    <label>Remind every:</label>
+                                    <div class="interval-input">
+                                        <input type="number" id="movement-interval" value="60" min="1" max="180">
+                                        <select id="movement-unit">
+                                            <option value="minutes">minutes</option>
+                                            <option value="hours">hours</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="next-reminder">
+                                    <span class="next-reminder-text" id="movement-next">Next reminder: --</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Deep Breathing Reminder -->
+                        <div class="reminder-card">
+                            <div class="reminder-header">
+                                <div class="reminder-icon breathing">
+                                    <i class="fas fa-lungs"></i>
+                                </div>
+                                <div class="reminder-info">
+                                    <h4>Deep Breathing</h4>
+                                    <p>Take 5 deep breaths to reduce stress</p>
+                                </div>
+                                <label class="toggle">
+                                    <input type="checkbox" id="breathing-reminder-toggle" class="reminder-toggle" data-type="breathing">
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                            <div class="reminder-settings">
+                                <div class="interval-setting">
+                                    <label>Remind every:</label>
+                                    <div class="interval-input">
+                                        <input type="number" id="breathing-interval" value="90" min="1" max="240">
+                                        <select id="breathing-unit">
+                                            <option value="minutes">minutes</option>
+                                            <option value="hours">hours</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="next-reminder">
+                                    <span class="next-reminder-text" id="breathing-next">Next reminder: --</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Screen Break Reminder -->
+                        <div class="reminder-card">
+                            <div class="reminder-header">
+                                <div class="reminder-icon screen-break">
+                                    <i class="fas fa-desktop"></i>
+                                </div>
+                                <div class="reminder-info">
+                                    <h4>Screen Break</h4>
+                                    <p>Step away from your screen for a few minutes</p>
+                                </div>
+                                <label class="toggle">
+                                    <input type="checkbox" id="screen-reminder-toggle" class="reminder-toggle" data-type="screen">
+                                    <span class="toggle-slider"></span>
+                                </label>
+                            </div>
+                            <div class="reminder-settings">
+                                <div class="interval-setting">
+                                    <label>Remind every:</label>
+                                    <div class="interval-input">
+                                        <input type="number" id="screen-interval" value="2" min="1" max="4">
+                                        <select id="screen-unit">
+                                            <option value="hours">hours</option>
+                                            <option value="minutes">minutes</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="next-reminder">
+                                    <span class="next-reminder-text" id="screen-next">Next reminder: --</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Statistics Section -->
+                    <div class="reminders-stats">
+                        <h3>Today's Health Stats</h3>
+                        <div class="stats-grid">
+                            <div class="stat-item">
+                                <div class="stat-icon">
+                                    <i class="fas fa-bell"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <div class="stat-number" id="total-reminders-today">0</div>
+                                    <div class="stat-label">Reminders Sent</div>
+                                </div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-icon">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <div class="stat-number" id="reminders-followed">0</div>
+                                    <div class="stat-label">Actions Taken</div>
+                                </div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-icon">
+                                    <i class="fas fa-percentage"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <div class="stat-number" id="health-score">0%</div>
+                                    <div class="stat-label">Health Score</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Add Site Modal -->
+    <div class="modal" id="add-site-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Add Site to Block</h3>
+                <button class="close-modal"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="site-url">Site URL</label>
+                    <input type="text" id="site-url" placeholder="example.com">
+                    <small>Enter domain name without http:// or www</small>
+                </div>
+
+                <div class="form-group" id="schedule-options" style="display: none;">
+                    <label>Blocking Schedule</label>
+                    
+                    <div class="days-selection">
+                        <div class="day-item">
+                            <input type="checkbox" id="day-0" value="0">
+                            <label for="day-0">Sun</label>
+                        </div>
+                        <div class="day-item">
+                            <input type="checkbox" id="day-1" value="1">
+                            <label for="day-1">Mon</label>
+                        </div>
+                        <div class="day-item">
+                            <input type="checkbox" id="day-2" value="2">
+                            <label for="day-2">Tue</label>
+                        </div>
+                        <div class="day-item">
+                            <input type="checkbox" id="day-3" value="3">
+                            <label for="day-3">Wed</label>
+                        </div>
+                        <div class="day-item">
+                            <input type="checkbox" id="day-4" value="4">
+                            <label for="day-4">Thu</label>
+                        </div>
+                        <div class="day-item">
+                            <input type="checkbox" id="day-5" value="5">
+                            <label for="day-5">Fri</label>
+                        </div>
+                        <div class="day-item">
+                            <input type="checkbox" id="day-6" value="6">
+                            <label for="day-6">Sat</label>
+                        </div>
+                    </div>
+
+                    <div class="time-selection">
+                        <div class="time-group">
+                            <label for="start-time">Start Time</label>
+                            <input type="time" id="start-time" value="09:00">
+                        </div>
+                        <div class="time-group">
+                            <label for="end-time">End Time</label>
+                            <input type="time" id="end-time" value="17:00">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <!-- <button class="secondary-btn cancel-btn">Cancel</button> -->
+                <button id="save-site-btn" class="primary-btn">Save</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- What's New Modal -->
+    <div class="modal" id="whats-new-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>What's New in ARGON</h3>
+                <button class="close-modal" data-modal="whats-new-modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="whats-new-container">
+                    <!-- Version Header -->
+                    <div class="version-header">
+                        <div class="version-badge">v0.1.3</div>
+                        <div class="version-info">
+                            <h3>Alpha Build</h3>
+                            <p class="release-date">July 2025</p>
+                        </div>
+                    </div>
+
+                    <!-- Features Grid -->
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon">📊</div>
+                            <div class="feature-content">
+                                <h4>Analytics Dashboard</h4>
+                                <p>Track screen time with interactive charts and daily insights</p>
+                            </div>
+                        </div>
+
+                        <div class="feature-card">
+                            <div class="feature-icon">🚫</div>
+                            <div class="feature-content">
+                                <h4>Site Blocking</h4>
+                                <p>Block distracting websites with custom schedules</p>
+                            </div>
+                        </div>
+
+                        <div class="feature-card">
+                            <div class="feature-icon">🍅</div>
+                            <div class="feature-content">
+                                <h4>Pomodoro Timer</h4>
+                                <p>Stay focused with customizable work sessions</p>
+                            </div>
+                        </div>
+
+                        <div class="feature-card">
+                            <div class="feature-icon">💀</div>
+                            <div class="feature-content">
+                                <h4>Doom Scroll Blocker</h4>
+                                <p>Break endless scrolling habits on social media</p>
+                            </div>
+                        </div>
+
+                        <div class="feature-card">
+                            <div class="feature-icon">🏥</div>
+                            <div class="feature-content">
+                                <h4>Health Reminders</h4>
+                                <p>Digital wellbeing alerts for posture, hydration & breaks</p>
+                            </div>
+                        </div>
+
+                        <div class="feature-card">
+                            <div class="feature-icon">🎨</div>
+                            <div class="feature-content">
+                                <h4>Modern UI</h4>
+                                <p>Clean, responsive design with smooth animations</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Alpha Notice -->
+                    <div class="alpha-notice">
+                        <div class="notice-icon">⚠️</div>
+                        <div class="notice-content">
+                            <strong>Alpha Release:</strong> This is an early version. Your feedback helps us improve!
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Developer Modal -->
+    <div class="modal" id="about-developer-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>About Developer</h3>
+                <button class="close-modal" data-modal="about-developer-modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="developer-info">
+                    <div class="developer-avatar">
+                        <img src="media/aryan.png" alt="Aryan Techie Profile" class="avatar-img">
+                    </div>
+                    <div class="developer-details">
+                        <h2>ARYAN JANGRA</h2>
+                        <p class="developer-bio"></p>
+                        
+                        <div class="contact-links">
+                            <a href="https://github.com/Aryan-Techie" target="_blank" class="contact-link github">
+                                <i class="fab fa-github"></i>
+                                <div class="contact-info">
+                                    <span class="contact-title">GitHub</span>
+                                    <span class="contact-subtitle">@Aryan-Techie</span>
+                                </div>
+                                <i class="fas fa-external-link-alt external-icon"></i>
+                            </a>
+                            <a href="mailto:aryan@aroice.in" class="contact-link email">
+                                <i class="fas fa-envelope"></i>
+                                <div class="contact-info">
+                                    <span class="contact-title">Email</span>
+                                    <span class="contact-subtitle">aryan@aroice.in</span>
+                                </div>
+                                <i class="fas fa-copy copy-icon" title="Click to copy email"></i>
+                            </a>
+                            <a href="https://aryan.aroice.in" target="_blank" class="contact-link website">
+                                <i class="fas fa-globe"></i>
+                                <div class="contact-info">
+                                    <span class="contact-title">About Me</span>
+                                    <span class="contact-subtitle">aryan.aroice.in</span>
+                                </div>
+                                <i class="fas fa-external-link-alt external-icon"></i>
+                            </a>
+                        </div>
+                        
+                        <div class="tech-stack">
+                            <h5>Built with:</h5>
+                            <div class="tech-tags">
+                                <span class="tech-tag">HTML5</span>
+                                <span class="tech-tag">CSS3</span>
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">Chart.js</span>
+                                <span class="tech-tag">Chrome Extensions API</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- About Designer Modal -->
+    <div class="modal" id="about-designer-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>About Designer</h3>
+                <button class="close-modal" data-modal="about-designer-modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="developer-info">
+                    <div class="developer-avatar">
+                        <img src="media/yash.png" alt="Aryan Techie Profile" class="avatar-img">
+                    </div>
+                    <div class="developer-details">
+                        <h2>YASH SHEGAONKAR</h2>
+                        <p class="developer-bio"></p>
+                        
+                        <div class="contact-links">
+                            <a href="https://instagram.com/monstrovert" target="_blank" class="contact-link github">
+                                <i class="fab fa-instagram"></i>
+                                <div class="contact-info">
+                                    <span class="contact-title">Instagram</span>
+                                    <span class="contact-subtitle">@monstrovert</span>
+                                </div>
+                                <i class="fas fa-external-link-alt external-icon"></i>
+                            </a>
+                            <a href="mailto:monstroic@outlook.com" class="contact-link email">
+                                <i class="fas fa-envelope"></i>
+                                <div class="contact-info">
+                                    <span class="contact-title">Email</span>
+                                    <span class="contact-subtitle">monstroic@outlook.com</span>
+                                </div>
+                                <i class="fas fa-copy copy-icon" title="Click to copy email"></i>
+                            </a>
+                            
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

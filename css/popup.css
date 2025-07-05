@@ -1,0 +1,277 @@
+/* Global Styles */
+:root {
+    /* Color palette based on the reference design */
+    --primary-color: #1a2436;
+    --secondary-color: #2c3445;
+    --accent-color: #ff6757;
+    --text-primary: #ffffff;
+    --text-secondary: #a7b0c0;
+    --border-color: #3a4255;
+    --success-color: #00c896;
+    --warning-color: #ffcc5c;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+body {
+    background-color: var(--primary-color);
+    color: var(--text-primary);
+    min-height: auto;
+}
+
+.container {
+    width: 320px;
+    padding: 16px;
+}
+
+/* Header Styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo img {
+    width: 36px;
+    height: 36px;
+}
+
+.title h1 {
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.title p {
+    font-size: 12px;
+    color: var(--accent-color);
+}
+
+/* Button Styles */
+.icon-btn {
+    background: none;
+    border: none;
+    color: var(--text-primary);
+    font-size: 18px;
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 34px;
+    width: 34px;
+    position: relative;
+    overflow: hidden;
+}
+
+.icon-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 2px 8px rgba(255, 103, 87, 0.2);
+}
+
+.icon-btn:active {
+    transform: scale(0.95);
+}
+
+/* Settings button specific animations */
+.icon-btn#settings-btn:hover {
+    animation: settingsGear 0.6s ease-in-out;
+}
+
+@keyframes settingsGear {
+    0%, 100% {
+        transform: scale(1.1) rotate(0deg);
+    }
+    50% {
+        transform: scale(1.1) rotate(180deg);
+    }
+}
+
+.primary-btn, .secondary-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+    gap: 8px;
+}
+
+.primary-btn {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+.primary-btn:hover {
+    background-color: #ff5445;
+}
+
+.secondary-btn {
+    background-color: var(--secondary-color);
+    color: var(--text-primary);
+}
+
+.secondary-btn:hover {
+    background-color: #3a4255;
+}
+
+/* Time Card Styles */
+.time-card {
+    background-color: var(--secondary-color);
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin-bottom: 16px;
+    position: relative;
+    overflow: hidden;
+}
+
+.time-card h2 {
+    font-size: 12px;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+}
+
+.time-card .time {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+/* Timer Card Styles */
+.timer-card {
+    background-color: var(--secondary-color);
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin-bottom: 16px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--warning-color);
+    animation: pulse 2s infinite alternate;
+}
+
+.timer-header h2 {
+    font-size: 12px;
+    text-transform: uppercase;
+    color: var(--warning-color);
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+}
+
+.timer-site {
+    font-size: 14px;
+    color: var(--text-primary);
+    margin-bottom: 12px;
+    font-weight: 500;
+}
+
+.timer-display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 0 8px;
+}
+
+.timer-circle {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    margin-bottom: 8px;
+}
+
+.timer-circle svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: rotate(-90deg);
+}
+
+.timer-bg {
+    fill: none;
+    stroke: rgba(255, 255, 255, 0.1);
+    stroke-width: 4;
+}
+
+.timer-progress {
+    fill: none;
+    stroke: var(--warning-color);
+    stroke-width: 4;
+    transition: stroke-dashoffset 1s linear;
+}
+
+.timer-time {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--warning-color);
+}
+
+.timer-label {
+    font-size: 12px;
+    color: var(--text-secondary);
+}
+
+@keyframes pulse {
+    from {
+        box-shadow: 0 0 0 0 rgba(255, 204, 92, 0.2);
+    }
+    to {
+        box-shadow: 0 0 0 8px rgba(255, 204, 92, 0);
+    }
+}
+
+/* Action Buttons */
+.action-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+/* Quick Stats */
+.quick-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.stat {
+    background-color: var(--secondary-color);
+    border-radius: 8px;
+    padding: 12px;
+    text-align: center;
+}
+
+.stat h3 {
+    font-size: 12px;
+    color: var(--text-secondary);
+    margin-bottom: 5px;
+    font-weight: normal;
+}
+
+.stat p {
+    font-size: 20px;
+    font-weight: 600;
+}

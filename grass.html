@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Touch Some Grass - ARGON</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #000000;
+            color: #ffffff;
+            font-family: 'Arial Black', Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+            line-height: 1.2;
+            overflow: hidden;
+        }
+        
+        .message {
+            font-size: clamp(1.5rem, 5vw, 4rem);
+            font-weight: 900;
+            margin: 0.3em 0;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+        
+        .red {
+            color: #ff2222;
+        }
+        
+        .green {
+            color: #00dd00;
+        }
+        
+        .back-link {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            color: #444;
+            text-decoration: none;
+            font-size: 0.8rem;
+            padding: 8px 12px;
+            border: 1px solid #333;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            font-family: Arial, sans-serif;
+            font-weight: normal;
+        }
+        
+        .back-link:hover {
+            color: #888;
+            border-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div id="messages-container">
+        <!-- Messages will be populated by JavaScript -->
+    </div>
+    
+    <a href="google.com" onclick="window.history.back(); return false;" class="back-link">Back</a>
+    
+    <script>
+        const messages = [
+            "TOUCH SOME GRASS",
+            "GO OUTSIDE",
+            "TIME TO STEP AWAY",
+            "BREATHE FRESH AIR",
+            "MOVE YOUR BODY",
+            "DISCONNECT TO RECONNECT",
+            "TAKE A WALK",
+            "SEE THE SKY",
+            "FEEL THE SUN",
+            "NATURE IS CALLING",
+            "LOOK UP FROM SCREEN",
+            "GET SOME VITAMIN D",
+            "STRETCH YOUR LEGS",
+            "CLEAR YOUR MIND",
+            "REAL LIFE AWAITS",
+            "STEP INTO REALITY",
+            "FIND SOME PEACE",
+            "RECONNECT WITH EARTH"
+        ];
+        
+        function getRandomColor() {
+            return Math.random() > 0.5 ? 'red' : 'green';
+        }
+        
+        function displayRandomMessages() {
+            const container = document.getElementById('messages-container');
+            container.innerHTML = '';
+            
+            // Show 3-4 random messages
+            const numMessages = Math.floor(Math.random() * 2) + 3;
+            const selectedMessages = [...messages]
+                .sort(() => 0.5 - Math.random())
+                .slice(0, numMessages);
+            
+            selectedMessages.forEach((text, index) => {
+                const div = document.createElement('div');
+                div.className = `message ${getRandomColor()}`;
+                div.textContent = text;
+                container.appendChild(div);
+            });
+        }
+        
+        // Display initial messages
+        displayRandomMessages();
+        
+        // Prevent immediate back navigation
+        let canGoBack = false;
+        setTimeout(() => {
+            canGoBack = true;
+            document.querySelector('.back-link').style.color = '#666';
+        }, 5000);
+        
+        document.querySelector('.back-link').addEventListener('click', function(e) {
+            if (!canGoBack) {
+                e.preventDefault();
+                this.textContent = 'Wait...';
+                setTimeout(() => {
+                    this.textContent = 'Back';
+                }, 1000);
+            }
+        });
+    </script>
+</body>
+</html>
