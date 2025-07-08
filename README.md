@@ -7,6 +7,7 @@
 [![Version](https://img.shields.io/badge/version-0.1.3-blue.svg)](https://github.com/aroice-hq/argon)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![Chrome Web Store](https://img.shields.io/badge/Chrome%20Web%20Store-Coming%20Soon-orange.svg)](https://chromewebstore.google.com/)
+[![Product Hunt](https://img.shields.io/badge/Product%20Hunt-Launch%20Soon-ff6154.svg)](https://www.producthunt.com/products/argon)
 
 *Reclaim your focus. Master your time. Transform your digital life.*
 
@@ -270,6 +271,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - 🌐 **Project Homepage**: [argon.aroice.in](https://argon.aroice.in)
 - 📊 **Analytics Dashboard**: Built-in comprehensive dashboard
+- 🚀 **Product Hunt**: [Follow our launch](https://www.producthunt.com/) (launching soon)
 - 🆘 **Support**: [admin@aroice.in](mailto:admin@aroice.in)
 - 🐛 **Issues**: [GitHub Issues](https://github.com/aroice-hq/argon/issues)
 
