@@ -1,0 +1,14 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 📧 Email Support
+    url: mailto:admin@aroice.in
+    about: For private support or security issues
+  - name: 💬 General Discussion
+    url: https://github.com/aroice-hq/argon/discussions
+    about: Ask questions and discuss with the community
+  - name: 🌐 Project Homepage
+    url: https://argon.aroice.in
+    about: Visit the official ARGON website
+  - name: 📖 Documentation
+    url: https://github.com/aroice-hq/argon/blob/main/README.md
+    about: Read the documentation and setup guides

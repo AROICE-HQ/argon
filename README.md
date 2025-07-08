@@ -8,7 +8,7 @@
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 [![Chrome Web Store](https://img.shields.io/badge/Chrome%20Web%20Store-Coming%20Soon-orange.svg)](https://chromewebstore.google.com/)
 
-*Protecting your digital wellbeing, one click at a time.*
+*Reclaim your focus. Master your time. Transform your digital life.*
 
 </div>
 
@@ -204,6 +204,8 @@ Here's how you can help:
 - 📖 **Documentation**: Improve docs and add tutorials
 - 🌐 **Localization**: Translate the extension to other languages
 - 🧪 **Testing**: Add tests and improve code coverage
+
+📚 **Learn more about contribution guidelines and how to get started:** [Contributing Guide](CONTRIBUTING.md)
 
 ## 🐛 Bug Reports & Feature Requests
 
