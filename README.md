@@ -255,13 +255,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - 🐙 GitHub: [@Aryan-Techie](https://github.com/Aryan-Techie)
 - 🏢 Organization: [AROICE](https://aroice.in)
 
-## 🙏 Acknowledgments
-
-- **Chart.js** - For beautiful data visualizations
-- **Font Awesome** - For the comprehensive icon library
-- **Chrome Extensions Team** - For the powerful extension platform
-- **Open Source Community** - For inspiration and best practices
-
 ## 🔗 Related Projects
 
 - **[Ashes New Tab](https://ashes.aroice.in)** - Transform your new tab into a productivity powerhouse
