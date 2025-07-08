@@ -263,7 +263,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 📢 Stay Connected
 
 - 🌐 **Project Homepage**: [argon.aroice.in](https://argon.aroice.in)
-- 🚀 **Product Hunt**: [Upvote & Support](https://www.producthunt.com/) (launching soon)
+- 🚀 **Product Hunt**: [Upvote & Support](https://www.producthunt.com/products/argon)
 - 🆘 **Support**: [admin@aroice.in](mailto:admin@aroice.in)
 - 🐛 **Issues**: [GitHub Issues](https://github.com/aroice-hq/argon/issues)
 
