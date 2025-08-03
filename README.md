@@ -6,7 +6,7 @@
 
 [![Version](https://img.shields.io/badge/version-0.1.3-blue.svg)](https://github.com/aroice-hq/argon)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
-[![Chrome Web Store](https://img.shields.io/badge/Chrome%20Web%20Store-Coming%20Soon-orange.svg)](https://chromewebstore.google.com/)
+[![Chrome Web Store](https://img.shields.io/badge/Chrome%20Web%20Store-Coming%20Soon-orange.svg)]([https://chromewebstore.google.com/](https://chromewebstore.google.com/detail/argon-your-shield-against/nnliabhpkoclcmdmbilkgilphffcmiih))
 [![Product Hunt](https://img.shields.io/badge/Product%20Hunt-View%20Product-ff6154.svg)](https://www.producthunt.com/products/argon)
 
 *Reclaim your focus. Master your time. Transform your digital life.*
@@ -60,8 +60,8 @@
 
 ## 🚀 Installation
 
-### From Chrome Web Store (Coming Soon)
-1. Visit the [Chrome Web Store page](https://chromewebstore.google.com/) (link coming soon, this month)
+### From Chrome Web Store
+1. Visit the [Chrome Web Store page](https://chromewebstore.google.com/detail/argon-your-shield-against/nnliabhpkoclcmdmbilkgilphffcmiih)
 2. Click "Add to Chrome"
 3. Confirm the installation
 4. Pin the extension to your toolbar for easy access
